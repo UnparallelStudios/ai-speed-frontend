@@ -1,0 +1,14 @@
+.profile-tile-container {
+    height: 35%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .profile-tile {
+        height: 90%;
+        width: 90%;
+        border: 1px white solid;
+        border-radius: 18px;
+    }
+}

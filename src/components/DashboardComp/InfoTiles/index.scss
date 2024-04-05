@@ -1,0 +1,14 @@
+.infotiles-container {
+    height: 28vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    // background-color: aquamarine;
+}
+
+.tile {
+    height: 70%;
+    width: 25%;
+    border-radius: 20px;
+}
