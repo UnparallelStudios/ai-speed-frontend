@@ -1,6 +1,5 @@
 import Dashboard from "./pages/Dashboard";
 import "./App.scss";
-
 import { Routes, Route } from "react-router-dom";
 
 function App() {

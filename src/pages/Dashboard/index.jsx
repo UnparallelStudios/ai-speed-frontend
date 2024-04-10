@@ -1,18 +1,22 @@
 import "./index.scss";
 import { useState, useEffect, useRef } from "react";
 
-import OverviewNav from "../../components/DashboardComp/OverviewNav";
-import InfoTiles from "../../components/DashboardComp/InfoTiles";
-import LocationMap from "../../components/DashboardComp/LocationMap";
 import ProfileTile from "../../components/ProfileFeedComp/ProfileTile";
+import NavSelection from "../../components/MainNavBarComp/NavSelection";
+import CenterComp from "../../components/CenterComp";
 
 function Dashboard() {
   const [elementHeight, setElementHeight] = useState("");
+  const [activeIndex, setActiveIndex] = useState(0);
   const heightRef = useRef();
 
   useEffect(() => {
     setElementHeight(heightRef.current.clientHeight);
   });
+
+  const handleChangeActive = (index) => {
+    setActiveIndex(index);
+  };
 
   return (
     <>
@@ -22,12 +26,18 @@ function Dashboard() {
             Ai Surveillance
           </div>
           <div className="divider-2"></div>
+          <NavSelection
+            activeIndex={activeIndex}
+            onChangeActive={handleChangeActive}
+          />
+          <div className="divider-2"></div>
         </div>
         <div className="divider-1"></div>
-        <div className="overview-container">
-          <OverviewNav overviewHeight={elementHeight} />
-          <InfoTiles />
-          <LocationMap />
+        <div className="center-container">
+          <CenterComp
+            overviewHeight={elementHeight}
+            activeIndex={activeIndex}
+          />
         </div>
         <div className="divider-1"></div>
         <div className="profile-feed-container">
