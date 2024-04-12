@@ -13,8 +13,8 @@ function NavSelection({ activeIndex, onChangeActive }) {
   const navElements = [
     { title: "OverView", key: 0 },
     { title: "Projects", key: 1 },
-    { title: "Tasks", key: 2 },
-    { title: "Schedule", key: 3 },
+    { title: "Placeholder", key: 2 },
+    { title: "Placeholder", key: 3 },
   ];
 
   return (

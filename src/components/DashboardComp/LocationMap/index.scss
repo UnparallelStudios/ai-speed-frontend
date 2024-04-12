@@ -1,5 +1,97 @@
 .location-map-container {
     height: 54vh;
     width: 100%;
-    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divider-3 {
+    height: 94%;
+    width: 1px;
+    background-color: gray;
+}
+
+.map-container {
+    height: 100%;
+    flex: 1.4;
+
+    .map-title-container {
+        height: 15%;
+        width: 100%;
+        color: white;
+        display: flex;
+        align-items: end;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 19px;
+        font-weight: 200;
+    }
+
+    .map-display-container {
+        height: 85%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .full-size-map-display {
+            height: 85%;
+            width: 88%;
+            border: 2px solid white;
+            border-radius: 18px;
+        }
+    }
+}
+
+.available-camera-feed {
+    height: 100%;
+    flex: 0.9;
+
+    .camera-feeds-title {
+        height: 15%;
+        width: 100%;
+        color: white;
+        display: flex;
+        align-items: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 19px;
+        font-weight: 200;    
+    }
+
+    .camera-feeds {
+        height: 85%;
+        width: 100%;
+        display: flex;
+
+        .feeds-list {
+            height: 50%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-between;
+            // padding-left: 20px;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            
+            a {
+                height: 20%;
+                width: 40%;
+                display: flex;
+                margin-left: 18px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+                background-color: #282837;
+            }
+
+            a:hover {
+                background-color: rgba(255, 255, 255, 0.686);
+                color: black;
+            }
+        }
+    }
+
 }
