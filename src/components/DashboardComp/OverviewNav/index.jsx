@@ -8,7 +8,9 @@ function OverviewNav({ overviewHeight }) {
           <div className="overview-title">
             <div style={{ paddingLeft: "30px" }}>Overview</div>
           </div>
-          <div className="overview-search-bar"></div>
+          <div className="overview-search-bar">
+            <input type="text" placeholder="Search"></input>
+          </div>
         </div>
         <div className="overview-performance">
           <div className="performance-title">

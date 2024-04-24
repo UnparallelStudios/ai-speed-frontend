@@ -7,9 +7,13 @@ function CenterComp({ overviewHeight, activeIndex }) {
     return <DashboardComp overviewHeight={overviewHeight} />;
   };
 
+  const ProjectPass = () => {
+    return <ProjectComp overviewHeight={overviewHeight} />;
+  };
+
   const activeComponents = {
     0: DashboardPass,
-    1: ProjectComp,
+    1: ProjectPass,
   };
 
   const SelectedComponent = activeComponents[activeIndex];

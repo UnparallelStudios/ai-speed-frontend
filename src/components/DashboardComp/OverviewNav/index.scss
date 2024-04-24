@@ -23,7 +23,31 @@
         .overview-search-bar {
             height: 100%;
             width: 50%;
-            // background-color: brown;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            input {
+                height: 40%;
+                width: 50%;
+                border-radius: 6px;
+                background-color: #282837;
+                border: none;
+                color: white;
+                font-size: 15px;
+                padding-left: 10px;
+            }
+
+            input:hover {
+                background-color: rgba(255, 255, 255, 0.906);
+                color: black;
+            }
+
+            input:focus {
+                background-color: rgba(255, 255, 255, 0.906);
+                color: black;
+                outline: none;
+            }
         }
     }
 
