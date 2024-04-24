@@ -45,6 +45,9 @@ function Dashboard() {
             Profile
           </div>
           <ProfileTile />
+          <div className="live-feed-title">
+            <div style={{ paddingLeft: "18px" }}>Live Feed:</div>
+          </div>
         </div>
       </div>
     </>
