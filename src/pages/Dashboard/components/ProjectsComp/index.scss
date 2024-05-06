@@ -32,8 +32,32 @@
     }
 }
 
-.divider-4 {
-    height: 1px;
-    width: 97%;
-    background-color: gray;
+.new-project-container {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    background-color: aqua;
 }
+
+.current-project-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex : 2;
+
+    .grid-container--currproj {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .grid-item--currproj {
+            height: 100%;
+            width: 100%;
+            // background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+

@@ -3,7 +3,7 @@
 .dashboard-main-container {
     height: 100vh;
     width: 100%;
-    background-color: $bg-color;
+    background-color: var(--bgColor);
     display: flex;
     flex-direction: row;
     justify-content: center;

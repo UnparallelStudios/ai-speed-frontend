@@ -10,7 +10,19 @@ function ProjectComp({ overviewHeight }) {
           </div>
           <div className="project-nav-search"></div>
         </div>
-        {/* <div className="divider-4"></div> */}
+        <div className="new-project-container"></div>
+        <div className="current-project-container">
+          <div className="grid-container--currproj">
+            <div className="grid-item--currproj">
+              <img src="src/pages/Dashboard/DashAssets/Group 40.png"></img>
+            </div>
+            <div className="grid-item--currproj">x</div>
+            <div className="grid-item--currproj">x</div>
+            <div className="grid-item--currproj">x</div>
+            <div className="grid-item--currproj">x</div>
+            <div className="grid-item--currproj">x</div>
+          </div>
+        </div>
       </div>
     </>
   );
