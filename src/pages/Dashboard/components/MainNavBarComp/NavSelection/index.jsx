@@ -1,9 +1,11 @@
-import { useEffect, useState, useRef } from "react";
+import { RxDashboard } from "react-icons/rx";
+import { RxCardStackPlus } from "react-icons/rx";
 import "./index.scss";
 
-const NavItem = ({ active, title, onClick }) => {
+const NavItem = ({ active, logo, title, onClick }) => {
   return (
     <a className={active ? "nav-item-active" : "nav-item"} onClick={onClick}>
+      {logo}
       {title}
     </a>
   );
@@ -11,8 +13,8 @@ const NavItem = ({ active, title, onClick }) => {
 
 function NavSelection({ activeIndex, onChangeActive }) {
   const navElements = [
-    { title: "OverView", key: 0 },
-    { title: "Projects", key: 1 },
+    { logo: <RxDashboard />, title: "Overview", key: 0 },
+    { logo: <RxCardStackPlus />, title: "Projects", key: 1 },
     { title: "Placeholder", key: 2 },
     { title: "Placeholder", key: 3 },
   ];
@@ -24,6 +26,7 @@ function NavSelection({ activeIndex, onChangeActive }) {
           {navElements.map((item, index) => (
             <NavItem
               key={item.key}
+              logo={item.logo}
               title={item.title}
               active={index === activeIndex}
               onClick={() => onChangeActive(index)}

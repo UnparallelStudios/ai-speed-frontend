@@ -12,7 +12,7 @@ function Dashboard() {
 
   useEffect(() => {
     setElementHeight(heightRef.current.clientHeight);
-  });
+  }, []);
 
   const handleChangeActive = (index) => {
     setActiveIndex(index);
