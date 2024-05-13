@@ -4,12 +4,15 @@ import { Link, NavLink } from "react-router-dom";
 
 import video from "../LoginAssets/video.mp4";
 import logo from "../LoginAssets/L1.jpg";
+import axios from "axios";
 
 import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 
 const Login = () => {
+  const url = "  ";
+
   return (
     <div className="loginPage flex">
       <div className="container flex">

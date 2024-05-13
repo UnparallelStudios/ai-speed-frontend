@@ -12,9 +12,10 @@ function OverviewNav({ overviewHeight }) {
             <input type="text" placeholder="Search"></input>
           </div>
         </div>
+        <div className="overview-divider"></div>
         <div className="overview-performance">
           <div className="performance-title">
-            <div style={{ paddingLeft: "30px" }}>Performance</div>
+            <div style={{ paddingLeft: "20px" }}>Performance</div>
           </div>
           <div className="performance-period"></div>
         </div>

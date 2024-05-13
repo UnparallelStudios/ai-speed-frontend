@@ -11,10 +11,16 @@ const NavItem = ({ active, logo, title, onClick }) => {
   );
 };
 
+const logoStyle = {
+  height: "40%",
+  marginLeft: "10%",
+  marginRight: "5%",
+};
+
 function NavSelection({ activeIndex, onChangeActive }) {
   const navElements = [
-    { logo: <RxDashboard />, title: "Overview", key: 0 },
-    { logo: <RxCardStackPlus />, title: "Projects", key: 1 },
+    { logo: <RxDashboard style={logoStyle} />, title: "Overview", key: 0 },
+    { logo: <RxCardStackPlus style={logoStyle} />, title: "Projects", key: 1 },
     { title: "Placeholder", key: 2 },
     { title: "Placeholder", key: 3 },
   ];

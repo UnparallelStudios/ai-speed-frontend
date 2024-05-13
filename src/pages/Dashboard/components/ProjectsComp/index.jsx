@@ -1,5 +1,6 @@
 import "./index.scss";
 import { FaFolder, FaFolderOpen } from "react-icons/fa";
+import { useState, useEffect, useRef } from "react";
 
 function ProjectComp({ overviewHeight }) {
   return (
@@ -9,12 +10,18 @@ function ProjectComp({ overviewHeight }) {
           <div className="project-nav-container">
             <div style={{ paddingLeft: "30px" }}>Projects</div>
           </div>
-          <div className="project-nav-search"></div>
+          <div className="project-search-bar">
+            <input type="text" placeholder="Search"></input>
+          </div>
         </div>
         <div className="projects-divider"></div>
         <div className="new-project-container">
           <div className="new-project-title">
-            <div style={{ paddingLeft: "30px", paddingTop: "30px" }}>
+            <div
+              style={{
+                paddingLeft: "20px",
+              }}
+            >
               Start a new project:
             </div>
           </div>
@@ -23,9 +30,8 @@ function ProjectComp({ overviewHeight }) {
               <FaFolderOpen
                 style={{
                   color: "lightgrey",
-                  height: "180px",
-                  width: "180px",
-                  paddingTop: "20px",
+                  height: "140px",
+                  width: "140px",
                 }}
               />
             </div>
@@ -34,39 +40,43 @@ function ProjectComp({ overviewHeight }) {
         <div className="projects-divider"></div>
         <div className="current-project-container">
           <div className="curr-project-title">
-            <div style={{ paddingLeft: "30px", paddingTop: "30px" }}>
+            <div
+              style={{
+                paddingLeft: "20px",
+              }}
+            >
               Current Projects:
             </div>
           </div>
           <div className="grid-container--currproj">
             <div className="grid-item--currproj">
               <FaFolder
-                style={{ color: "#7279F2", height: "180px", width: "180px" }}
+                style={{ color: "#7279F2", height: "140px", width: "140px" }}
               />
             </div>
             <div className="grid-item--currproj">
               <FaFolder
-                style={{ color: "#1AE5CA", height: "180px", width: "180px" }}
+                style={{ color: "#1AE5CA", height: "140px", width: "140px" }}
               />
             </div>
             <div className="grid-item--currproj">
               <FaFolder
-                style={{ color: "#FB174E", height: "180px", width: "180px" }}
+                style={{ color: "#FB174E", height: "140px", width: "140px" }}
               />
             </div>
             <div className="grid-item--currproj">
               <FaFolder
-                style={{ color: "#FFA596", height: "180px", width: "180px" }}
+                style={{ color: "#FFA596", height: "140px", width: "140px" }}
               />
             </div>
             <div className="grid-item--currproj">
               <FaFolder
-                style={{ color: "#FAEC8F", height: "180px", width: "180px" }}
+                style={{ color: "#FAEC8F", height: "140px", width: "140px" }}
               />
             </div>
             <div className="grid-item--currproj">
               <FaFolder
-                style={{ color: "#E97C64", height: "70%", width: "70%" }}
+                style={{ color: "#E97C64", height: "140px", width: "140px" }}
               />
             </div>
           </div>
