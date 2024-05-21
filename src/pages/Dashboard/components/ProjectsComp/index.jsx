@@ -1,8 +1,70 @@
 import "./index.scss";
 import { FaFolder, FaFolderOpen } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import Dashboard from "../..";
 
 function ProjectComp({ overviewHeight }) {
+  const navigate = useNavigate();
+
+  const FolderItem = ({ color, location, locationId }) => {
+    return (
+      <div className="grid-item--currproj">
+        <div className="folder-container">
+          <a className="location-title" onClick={() => navigate(locationId)}>
+            {location}
+          </a>
+          <FaFolder
+            style={{
+              color: color,
+              height: "140px",
+              width: "140px",
+            }}
+          />
+        </div>
+      </div>
+    );
+  };
+
+  const folderElements = [
+    {
+      color: "#7279F2",
+      location: "Thrikkakara",
+      key: 0,
+      locationId: "/dashboard/thrikkakara",
+    },
+    {
+      color: "#1AE5CA",
+      location: "Edapally",
+      key: 1,
+      locationId: "/dashboard/edapally",
+    },
+    {
+      color: "#FB174E",
+      location: "Palarivattom",
+      key: 2,
+      locationId: "/dashboard/palarivattom",
+    },
+    {
+      color: "#FFA596",
+      location: "Kadavanthra",
+      key: 3,
+      locationId: "/dashboard/Kadavanthra",
+    },
+    {
+      color: "#FAEC8F",
+      location: "Kaloor",
+      key: 4,
+      locationId: "/dashboard/kaloor",
+    },
+    {
+      color: "#E97C64",
+      location: "Vennela",
+      key: 5,
+      locationId: "/dashboard/vennela",
+    },
+  ];
+
   return (
     <>
       <div className="project-comp-container">
@@ -45,40 +107,18 @@ function ProjectComp({ overviewHeight }) {
                 paddingLeft: "20px",
               }}
             >
-              Current Projects:
+              Current Project Locations:
             </div>
           </div>
           <div className="grid-container--currproj">
-            <div className="grid-item--currproj">
-              <FaFolder
-                style={{ color: "#7279F2", height: "140px", width: "140px" }}
+            {folderElements.map((item) => (
+              <FolderItem
+                key={item.key}
+                color={item.color}
+                location={item.location}
+                locationId={item.locationId}
               />
-            </div>
-            <div className="grid-item--currproj">
-              <FaFolder
-                style={{ color: "#1AE5CA", height: "140px", width: "140px" }}
-              />
-            </div>
-            <div className="grid-item--currproj">
-              <FaFolder
-                style={{ color: "#FB174E", height: "140px", width: "140px" }}
-              />
-            </div>
-            <div className="grid-item--currproj">
-              <FaFolder
-                style={{ color: "#FFA596", height: "140px", width: "140px" }}
-              />
-            </div>
-            <div className="grid-item--currproj">
-              <FaFolder
-                style={{ color: "#FAEC8F", height: "140px", width: "140px" }}
-              />
-            </div>
-            <div className="grid-item--currproj">
-              <FaFolder
-                style={{ color: "#E97C64", height: "140px", width: "140px" }}
-              />
-            </div>
+            ))}
           </div>
         </div>
       </div>

@@ -5,12 +5,16 @@ import { Link, NavLink } from "react-router-dom";
 import video from "../LoginAssets/video.mp4";
 import logo from "../LoginAssets/L1.jpg";
 import axios from "axios";
+import { useState, useEffect, useRef } from "react";
 
 import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 
 const Login = () => {
+  const [loginUsername, setLoginUsername] = useState("");
+  const [loginPassword, setloginPassword] = useState("");
+
   const url = "  ";
 
   return (

@@ -1,6 +1,7 @@
 import { RxDashboard } from "react-icons/rx";
 import { RxCardStackPlus } from "react-icons/rx";
 import "./index.scss";
+import { useNavigate } from "react-router-dom";
 
 const NavItem = ({ active, logo, title, onClick }) => {
   return (
@@ -17,10 +18,23 @@ const logoStyle = {
   marginRight: "5%",
 };
 
-function NavSelection({ activeIndex, onChangeActive }) {
+function NavSelection({ activeIndex }) {
+  const navigate = useNavigate();
+  const urlIndex = activeIndex["activeUrlIndex"];
+
   const navElements = [
-    { logo: <RxDashboard style={logoStyle} />, title: "Overview", key: 0 },
-    { logo: <RxCardStackPlus style={logoStyle} />, title: "Projects", key: 1 },
+    {
+      logo: <RxDashboard style={logoStyle} />,
+      title: "Overview",
+      navigator: "/dashboard",
+      key: 0,
+    },
+    {
+      logo: <RxCardStackPlus style={logoStyle} />,
+      title: "Projects",
+      navigator: "/project",
+      key: 1,
+    },
     { title: "Placeholder", key: 2 },
     { title: "Placeholder", key: 3 },
   ];
@@ -34,8 +48,10 @@ function NavSelection({ activeIndex, onChangeActive }) {
               key={item.key}
               logo={item.logo}
               title={item.title}
-              active={index === activeIndex}
-              onClick={() => onChangeActive(index)}
+              active={index == urlIndex}
+              onClick={() => {
+                navigate(item.navigator);
+              }}
             />
           ))}
         </div>

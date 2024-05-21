@@ -92,6 +92,7 @@
       justify-content: center;
       align-items: start;
     }
+    
   }
 }
 
@@ -126,5 +127,27 @@
       justify-content: center;
       align-items: center;
     }
+  }
+}
+
+.folder-container {
+  height: auto;
+  width: auto;
+  position: relative;
+
+  .location-title {
+    height: auto;
+    width: auto;
+    position: absolute;
+    left: 10%;
+    top: 45px;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .location-title:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }
 }
