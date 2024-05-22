@@ -1,10 +1,10 @@
 import "./index.scss";
 import { useState, useEffect, useRef } from "react";
 
-import ProfileTile from "../../components/ProfileFeedComp/ProfileTile";
-import NavSelection from "../../components/MainNavBarComp/NavSelection";
-import CenterComp from "../../components/CenterComp";
-import LiveFeed from "../../components/LivefeedComp";
+import ProfileTile from "./components/ProfileFeedComp/ProfileTile";
+import NavSelection from "./components/MainNavBarComp/NavSelection";
+import CenterComp from "./components/CenterComp";
+import LiveFeed from "./components/LivefeedComp";
 
 function Dashboard() {
   const [elementHeight, setElementHeight] = useState("");
