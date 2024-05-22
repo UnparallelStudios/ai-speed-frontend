@@ -5,6 +5,7 @@ import ProfileTile from "./components/ProfileFeedComp/ProfileTile";
 import NavSelection from "./components/MainNavBarComp/NavSelection";
 import CenterComp from "./components/CenterComp";
 import { useParams } from "react-router-dom";
+import LiveFeed from "./components/LivefeedComp";
 
 function Dashboard(activeUrlIndex) {
   const [elementHeight, setElementHeight] = useState("");
@@ -44,6 +45,9 @@ function Dashboard(activeUrlIndex) {
           <ProfileTile />
           <div className="live-feed-title">
             <div style={{ paddingLeft: "18px" }}>Live Feed:</div>
+          </div>
+          <div className="live-feed-container">
+            <LiveFeed />
           </div>
         </div>
       </div>
