@@ -1,6 +1,10 @@
 import "./index.scss";
 
-function LocationMap() {
+function LocationMap({ locationId }) {
+  if (locationId == null) {
+    locationId = "Default(Kakkanad)";
+  }
+
   return (
     <>
       <div className="location-map-container">
@@ -8,7 +12,7 @@ function LocationMap() {
           <div className="map-title-container">
             <div style={{ paddingLeft: "30px" }}>
               Map Location: <br />
-              Kakkanad
+              {locationId}
             </div>
           </div>
           <div className="map-display-container">

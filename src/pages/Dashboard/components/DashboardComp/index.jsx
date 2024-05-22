@@ -3,12 +3,12 @@ import LocationMap from "./LocationMap";
 import OverviewNav from "./OverviewNav";
 import "./index.scss";
 
-function DashboardComp({ overviewHeight }) {
+function DashboardComp({ overviewHeight, locationId }) {
   return (
     <>
       <OverviewNav overviewHeight={overviewHeight} />
       <InfoTiles />
-      <LocationMap />
+      <LocationMap locationId={locationId} />
     </>
   );
 }

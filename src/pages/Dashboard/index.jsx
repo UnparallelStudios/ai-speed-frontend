@@ -4,20 +4,19 @@ import { useState, useEffect, useRef } from "react";
 import ProfileTile from "./components/ProfileFeedComp/ProfileTile";
 import NavSelection from "./components/MainNavBarComp/NavSelection";
 import CenterComp from "./components/CenterComp";
+import { useParams } from "react-router-dom";
 import LiveFeed from "./components/LivefeedComp";
 
-function Dashboard() {
+function Dashboard(activeUrlIndex) {
   const [elementHeight, setElementHeight] = useState("");
-  const [activeIndex, setActiveIndex] = useState(0);
   const heightRef = useRef();
+  const { locationId } = useParams();
+
+  console.log(locationId);
 
   useEffect(() => {
     setElementHeight(heightRef.current.clientHeight);
-  });
-
-  const handleChangeActive = (index) => {
-    setActiveIndex(index);
-  };
+  }, []);
 
   return (
     <>
@@ -27,17 +26,15 @@ function Dashboard() {
             Ai Surveillance
           </div>
           <div className="divider-2"></div>
-          <NavSelection
-            activeIndex={activeIndex}
-            onChangeActive={handleChangeActive}
-          />
+          <NavSelection activeIndex={activeUrlIndex} />
           <div className="divider-2"></div>
         </div>
         <div className="divider-1"></div>
         <div className="center-container">
           <CenterComp
+            locationId={locationId}
             overviewHeight={elementHeight}
-            activeIndex={activeIndex}
+            activeIndex={activeUrlIndex}
           />
         </div>
         <div className="divider-1"></div>

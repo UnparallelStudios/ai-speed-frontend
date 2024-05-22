@@ -9,10 +9,14 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>   
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard activeUrlIndex={"0"} />} />
+        <Route
+          path="/dashboard/:locationId"
+          element={<Dashboard activeUrlIndex={"0"} />}
+        />
+        <Route path="/project" element={<Dashboard activeUrlIndex={"1"} />} />
       </Routes>
-
     </>
   );
 }
