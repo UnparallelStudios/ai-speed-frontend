@@ -63,13 +63,39 @@ video {
   display: none;
 }
 
-.showMessage {
+.showMessage--success {
   display: block;
+  height: 30px;
+  color: var(--whiteColor);
+  background: rgb(33, 214, 72);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showMessage--failed {
+  display: block;
+  height: 30px;
   color: var(--whiteColor);
   background: rgb(255, 0, 0);
   border-radius: 3px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.showMessage {
+  display: block;
+  height: 30px;
+  color: var(--whiteColor);
+  background: rgb(111, 110, 110);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn {
   border: none;
   outline: none;

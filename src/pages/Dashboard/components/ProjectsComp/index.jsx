@@ -49,7 +49,7 @@ function ProjectComp({ overviewHeight }) {
       color: "#FFA596",
       location: "Kadavanthra",
       key: 3,
-      locationId: "/dashboard/Kadavanthra",
+      locationId: "/dashboard/kadavanthra",
     },
     {
       color: "#FAEC8F",

@@ -1,22 +1,27 @@
 import "./index.scss";
 import { useState, useEffect, useRef } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import ProfileTile from "./components/ProfileFeedComp/ProfileTile";
 import NavSelection from "./components/MainNavBarComp/NavSelection";
 import CenterComp from "./components/CenterComp";
-import { useParams } from "react-router-dom";
 import LiveFeed from "./components/LivefeedComp";
+import Popup from "reactjs-popup";
 
 function Dashboard(activeUrlIndex) {
   const [elementHeight, setElementHeight] = useState("");
   const heightRef = useRef();
   const { locationId } = useParams();
-
-  console.log(locationId);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setElementHeight(heightRef.current.clientHeight);
   }, []);
+
+  const signoutReset = () => {
+    localStorage.removeItem("username");
+    navigate("/");
+  };
 
   return (
     <>
@@ -40,11 +45,33 @@ function Dashboard(activeUrlIndex) {
         <div className="divider-1"></div>
         <div className="profile-feed-container">
           <div className="profile-navbar" style={{ height: elementHeight }}>
-            Profile
+            <div className="profile-nav-title">Profile</div>
+            <div className="profile-nav-logout">
+              <Popup
+                trigger={<a className="logout-button">Sign out</a>}
+                position={"center"}
+                arrow={false}
+              >
+                <div className="profile-popup-container">
+                  <div className="popup-question">
+                    Are you sure you want to
+                    <br />
+                    Sign out?
+                  </div>
+                  <div className="popup-choice">
+                    <a className="choice-yes" onClick={signoutReset}>
+                      Yes
+                    </a>
+                    <a className="choice-no">No</a>
+                  </div>
+                </div>
+              </Popup>
+            </div>
           </div>
+          {/* profile tile with username */}
           <ProfileTile />
           <div className="live-feed-title">
-            <div style={{ paddingLeft: "18px" }}>Live Feed:</div>
+            <div style={{ paddingLeft: "25px" }}>Live Feed:</div>
           </div>
           <div className="live-feed-container">
             <LiveFeed />

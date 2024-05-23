@@ -1,6 +1,6 @@
 import React from "react";
 import "../../App.scss";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import video from "../LoginAssets/video.mp4";
 import logo from "../LoginAssets/L1.jpg";
@@ -13,9 +13,44 @@ import { AiOutlineSwapRight } from "react-icons/ai";
 
 const Login = () => {
   const [loginUsername, setLoginUsername] = useState("");
-  const [loginPassword, setloginPassword] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [loginStatus, setLoginStatus] = useState("");
+  const navigate = useNavigate();
+
+  const handleChangeUsername = (e) => {
+    setLoginUsername(e.target.value);
+  };
+
+  const handleChangePassword = (e) => {
+    setLoginPassword(e.target.value);
+  };
 
   const url = "  ";
+
+  const validateLogin = () => {
+    if (loginUsername == "prathik" && loginPassword == "prejith") {
+      setLoginStatus("Success");
+      localStorage.setItem("username", loginUsername);
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 2000);
+    } else {
+      setLoginStatus("Failed");
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    }
+  };
+
+  const LoginStatusBar = ({ status }) => {
+    if (status == "Success") {
+      return <span className="showMessage--success">Success</span>;
+    } else if (status == "Failed") {
+      return <span className="showMessage--failed">Failed</span>;
+    } else {
+      return <span className="showMessage">Please Log in!</span>;
+    }
+  };
 
   return (
     <div className="loginPage flex">
@@ -40,12 +75,18 @@ const Login = () => {
             <h3>Welcome Back!</h3>
           </div>
           <form action="" className="form grid">
-            <span className="showMessage">Login Status will go here</span>
+            {/* login status bar goes here */}
+            <LoginStatusBar status={loginStatus} />
             <div className="inputDiv">
               <label htmlFor="username">Username</label>
               <div className="input flex">
                 <FaUserShield className="icon" />
-                <input type="text" id="username" placeholder="Enter username" />
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="Enter username"
+                  onChange={handleChangeUsername}
+                />
               </div>
             </div>
 
@@ -57,11 +98,12 @@ const Login = () => {
                   type="password"
                   id="password"
                   placeholder="Enter Password"
+                  onChange={handleChangePassword}
                 />
               </div>
             </div>
 
-            <button type="submit" className="btn flex">
+            <button type="button" className="btn flex" onClick={validateLogin}>
               <span>Login</span>
               <AiOutlineSwapRight className="icon" />
             </button>

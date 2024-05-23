@@ -54,17 +54,116 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex: 1.1;
 }
 
 .profile-navbar {
-  width: 50%;
+  width: 100%;
   color: white;
   display: flex;
   align-items: center;
-  justify-content: start;
-  padding-left: 18px;
+  justify-content: space-between;
+  padding-left: 25px;
+  padding-right: 20px;
   font-size: 25px;
+
+  .profile-nav-tile {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .profile-nav-logout {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    .logout-button {
+      height: 60%;
+      width: 50%;
+      border: 2px solid white;
+      border-radius: 11px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logout-button:hover {
+      background-color: rgba(255, 255, 255, 0.733);
+      color: rgb(242, 0, 0);
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}
+
+.profile-popup-container {
+  position: fixed;
+  top: 25%;
+  left: 34%;
+  height: 40%;
+  width: 30%;
+  border: 2px solid black;
+  border-radius: 18px;
+  background-color: rgb(46, 46, 46);
+
+  .popup-question {
+    height: 80%;
+    width: 100%;
+    font-size: 25px;
+    padding-left: 30px;
+    padding-top: 20px;
+    font-weight: 500;
+    color: white;
+  }
+
+  .popup-choice {
+    height: 20%;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-end;
+
+    .choice-yes {
+      height: 50%;
+      width: 20%;
+      margin-right: 20px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background-color: rgb(33, 214, 72);
+    }
+
+    .choice-yes:hover {
+      background-color: rgb(98, 255, 132);
+    }
+
+    .choice-no {
+      height: 50%;
+      width: 20%;
+      margin-right: 20px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background-color: rgb(255, 51, 51);
+    }
+
+    .choice-no:hover {
+      background-color: rgb(255, 106, 106);
+    }
+
+  }
 }
 
 .live-feed-title {

@@ -4,11 +4,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     .profile-tile {
         height: 90%;
         width: 90%;
         border: 2px white solid;
         border-radius: 20px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+
+        .profile-logo {
+            height: 100px;
+            width: 100px;
+            border: 2px white solid;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background-color: black;
+        }
+
+        .profile-user-name {
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
     }
 }
