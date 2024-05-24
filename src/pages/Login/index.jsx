@@ -8,7 +8,7 @@ import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 
 import { FaUserShield } from "react-icons/fa";
-import { BsFillShieldLockFill } from "react-icons/bs";
+import { BsFillShieldLockFill, BsPass } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 
 const Login = () => {
@@ -25,21 +25,44 @@ const Login = () => {
     setLoginPassword(e.target.value);
   };
 
-  const url = "  ";
+  const url = "https://32c4-34-16-150-250.ngrok-free.app/login";
 
   const validateLogin = () => {
-    if (loginUsername == "prathik" && loginPassword == "prejith") {
-      setLoginStatus("Success");
-      localStorage.setItem("username", loginUsername);
-      setTimeout(() => {
-        navigate("/dashboard");
-      }, 2000);
-    } else {
-      setLoginStatus("Failed");
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
-    }
+    const response = axios
+      .post(url, {
+        username: loginUsername,
+        password: loginPassword,
+      })
+      .then(function (response) {
+        if (response.status == 200) {
+          setLoginStatus("Success");
+          localStorage.setItem("username", loginUsername);
+          setTimeout(() => {
+            navigate("/dashboard");
+          }, 2000);
+        } else {
+          setLoginStatus("Failed");
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    // if (loginUsername == "prathik" && loginPassword == "prejith") {
+    //   setLoginStatus("Success");
+    //   localStorage.setItem("username", loginUsername);
+    //   setTimeout(() => {
+    //     navigate("/dashboard");
+    //   }, 2000);
+    // } else {
+    //   setLoginStatus("Failed");
+    //   setTimeout(() => {
+    //     window.location.reload();
+    //   }, 1000);
+    // }
   };
 
   const LoginStatusBar = ({ status }) => {

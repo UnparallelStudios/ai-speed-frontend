@@ -10,6 +10,7 @@ import Popup from "reactjs-popup";
 
 function Dashboard(activeUrlIndex) {
   const [elementHeight, setElementHeight] = useState("");
+  const [popupState, setPopupState] = useState("");
   const heightRef = useRef();
   const { locationId } = useParams();
   const navigate = useNavigate();
@@ -21,6 +22,10 @@ function Dashboard(activeUrlIndex) {
   const signoutReset = () => {
     localStorage.removeItem("username");
     navigate("/");
+  };
+
+  const closePopup = () => {
+    setPopupState(false);
   };
 
   return (
@@ -51,6 +56,8 @@ function Dashboard(activeUrlIndex) {
                 trigger={<a className="logout-button">Sign out</a>}
                 position={"center"}
                 arrow={false}
+                open={popupState}
+                closeOnDocumentClick
               >
                 <div className="profile-popup-container">
                   <div className="popup-question">
@@ -62,7 +69,9 @@ function Dashboard(activeUrlIndex) {
                     <a className="choice-yes" onClick={signoutReset}>
                       Yes
                     </a>
-                    <a className="choice-no">No</a>
+                    <a className="choice-no" onClick={closePopup}>
+                      No
+                    </a>
                   </div>
                 </div>
               </Popup>
