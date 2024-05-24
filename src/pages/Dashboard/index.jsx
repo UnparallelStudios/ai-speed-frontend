@@ -1,5 +1,6 @@
 import "./index.scss";
 import { useState, useEffect, useRef } from "react";
+import MLOutput from "./components/MLOutput";
 import { useNavigate, useParams } from "react-router-dom";
 
 import ProfileTile from "./components/ProfileFeedComp/ProfileTile";
@@ -84,6 +85,7 @@ function Dashboard(activeUrlIndex) {
           </div>
           <div className="live-feed-container">
             <LiveFeed />
+            {/* <MLOutput /> */}
           </div>
         </div>
       </div>

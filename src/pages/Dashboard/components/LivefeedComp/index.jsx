@@ -6,7 +6,7 @@ function LiveFeed() {
   const [socketInstance, setSocketInstance] = useState("");
   const [buttonState, setButtonState] = useState(false);
   const [remote, setRemote] = useState("");
-  const socket = io("0.tcp.in.ngrok.io:19998", {
+  const socket = io("0.tcp.in.ngrok.io:12125", {
     transports: ["websocket"],
     cors: {
       origin: "http://localhost:3000/",
