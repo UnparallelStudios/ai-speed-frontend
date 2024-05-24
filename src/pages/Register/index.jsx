@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../App.scss";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import video from "../LoginAssets/video.mp4";
 import logo from "../LoginAssets/L1.jpg";
@@ -10,24 +11,38 @@ import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 import { MdMarkEmailRead } from "react-icons/md";
 
-async function submitData(username, password) {
-  console.log("inside submit data: ", username, password);
-  fetch("http://localhost:3000/login/", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      username: username,
-      password: password,
-    }),
-  });
-}
-
 const Register = () => {
-  let [username, setUsername] = useState("");
-  let [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+  const urlRegister = "https://32c4-34-16-150-250.ngrok-free.app/signup";
+
+  const validateRegister = () => {
+    const response = axios
+      .post(urlRegister, {
+        uid: "u2108029",
+        name: "bros",
+        username: "bros",
+        email: email,
+        phone_no: "12345678891",
+        password: password,
+      })
+      .then(function (response) {
+        if (response.status == 200) {
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        } else {
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="registerPage flex">
@@ -58,7 +73,7 @@ const Register = () => {
                 <MdMarkEmailRead className="icon" />
                 <input
                   onChange={(e) => {
-                    setUsername(e.target.value);
+                    setEmail(e.target.value);
                   }}
                   type="text"
                   id="username"
@@ -83,11 +98,7 @@ const Register = () => {
             </div>
 
             <button
-              onClick={() => {
-                submitData(username, password).catch((e) => {
-                  console.log(e);
-                });
-              }}
+              onClick={validateRegister}
               type="button"
               className="btn flex"
             >
