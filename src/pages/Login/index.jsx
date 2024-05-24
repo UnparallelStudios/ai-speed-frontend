@@ -25,11 +25,11 @@ const Login = () => {
     setLoginPassword(e.target.value);
   };
 
-  const url = "https://32c4-34-16-150-250.ngrok-free.app/login";
+  const urlLogin = "https://32c4-34-16-150-250.ngrok-free.app/login";
 
   const validateLogin = () => {
     const response = axios
-      .post(url, {
+      .post(urlLogin, {
         username: loginUsername,
         password: loginPassword,
       })
