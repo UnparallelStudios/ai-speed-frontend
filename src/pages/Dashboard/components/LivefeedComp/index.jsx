@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import "./index.scss";
 
@@ -6,6 +6,7 @@ function LiveFeed() {
   const [socketInstance, setSocketInstance] = useState("");
   const [buttonState, setButtonState] = useState(false);
   const [remote, setRemote] = useState("");
+  const expandRef = useRef(null);
   const socket = io("0.tcp.in.ngrok.io:12125", {
     transports: ["websocket"],
     cors: {
@@ -123,7 +124,13 @@ function LiveFeed() {
 
   return (
     <>
-      <div className="live-feed">
+      <div
+        className="live-feed"
+        ref={expandRef}
+        onClick={() => {
+          expandRef.current.classList.toggle(".expand");
+        }}
+      >
         <video
           id="remoteVideo"
           playsInline

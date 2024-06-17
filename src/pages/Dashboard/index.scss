@@ -8,6 +8,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .divider-1 {
@@ -180,6 +181,7 @@
 .live-feed-container {
     // background-color: blue;
     flex: 1;
+    width: 100%;
 }
 
 .map-image-1 {
