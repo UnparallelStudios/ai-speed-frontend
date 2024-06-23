@@ -1,0 +1,22 @@
+.platedisplay-main-container {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pd-nav-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 25px;
+  color: white;
+}
+
+.divider-pd-1 {
+  height: 1px;
+  width: 97%;
+  background-color: grey;
+}

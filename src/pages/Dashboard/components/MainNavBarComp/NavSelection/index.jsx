@@ -1,5 +1,6 @@
 import { RxDashboard } from "react-icons/rx";
 import { RxCardStackPlus } from "react-icons/rx";
+import { FaCar } from "react-icons/fa6";
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
 
@@ -35,8 +36,13 @@ function NavSelection({ activeIndex }) {
       navigator: "/project",
       key: 1,
     },
-    { title: "Placeholder", key: 2 },
-    { title: "Placeholder", key: 3 },
+    // {
+    //   logo: <FaCar style={logoStyle} />,
+    //   title: "View Plates",
+    //   navigator: "/plates",
+    //   key: 2,
+    // },
+    // { title: "Placeholder", key: 3 },
   ];
 
   return (

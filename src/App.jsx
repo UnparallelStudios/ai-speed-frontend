@@ -16,6 +16,7 @@ function App() {
           element={<Dashboard activeUrlIndex={"0"} />}
         />
         <Route path="/project" element={<Dashboard activeUrlIndex={"1"} />} />
+        <Route path="/plates" element={<Dashboard activeUrlIndex={"2"} />} />
       </Routes>
     </>
   );

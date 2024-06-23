@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../../App.scss";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import video from "../LoginAssets/video.mp4";
-import logo from "../LoginAssets/L1.jpg";
+// import logo from "../LoginAssets/L1.jpg";
 
-import { FaUserShield } from "react-icons/fa";
+// import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 import { MdMarkEmailRead } from "react-icons/md";
@@ -19,7 +19,7 @@ const Register = () => {
   const urlRegister = "https://32c4-34-16-150-250.ngrok-free.app/signup";
 
   const validateRegister = () => {
-    const response = axios
+    axios
       .post(urlRegister, {
         uid: "u2108029",
         name: "bros",
@@ -63,7 +63,8 @@ const Register = () => {
         </div>
         <div className="formDiv flex">
           <div className="header div">
-            <img src={logo} alt="Logo Image" />
+            {/* <img src={logo} alt="Logo Image" /> */}
+            <div className="img-placeholder"></div>
             <h3> Let us know you!</h3>
           </div>
           <form action="" className="form grid">

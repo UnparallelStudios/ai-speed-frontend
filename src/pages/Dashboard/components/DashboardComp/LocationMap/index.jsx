@@ -7,7 +7,6 @@ function LocationMap({ locationId }) {
   }
 
   const [activeFeedItem, setActiveFeedItem] = useState("");
-  const [activePointerItem, setActivePointerItem] = useState("");
 
   const CameraFeedItem = ({ title, onClick, active }) => {
     return (

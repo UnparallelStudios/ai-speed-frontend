@@ -1,14 +1,13 @@
-import React from "react";
 import "../../App.scss";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import video from "../LoginAssets/video.mp4";
-import logo from "../LoginAssets/L1.jpg";
+// import logo from "../LoginAssets/L1.jpg";
 import axios from "axios";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 import { FaUserShield } from "react-icons/fa";
-import { BsFillShieldLockFill, BsPass } from "react-icons/bs";
+import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 
 const Login = () => {
@@ -28,7 +27,7 @@ const Login = () => {
   const urlLogin = "https://32c4-34-16-150-250.ngrok-free.app/login";
 
   const validateLogin = () => {
-    const response = axios
+    axios
       .post(urlLogin, {
         username: loginUsername,
         password: loginPassword,
@@ -56,7 +55,7 @@ const Login = () => {
     //   localStorage.setItem("username", loginUsername);
     //   setTimeout(() => {
     //     navigate("/dashboard");
-    //   }, 2000);
+    //   }, 1000);
     // } else {
     //   setLoginStatus("Failed");
     //   setTimeout(() => {
@@ -86,7 +85,7 @@ const Login = () => {
             <p>Elevate Your Surveillance Experience!</p>
           </div>
           <div className="footerDiv flex">
-            <span className="text">Don't have an account?</span>
+            <span className="text">{`Don't have an account?`}</span>
             <Link to={"/register"}>
               <button className="btn">Sign up</button>
             </Link>
@@ -94,7 +93,8 @@ const Login = () => {
         </div>
         <div className="formDiv flex">
           <div className="header div">
-            <img src={logo} alt="Logo Image" />
+            {/* <img src={logo} alt="Logo Image" /> */}
+            <div className="img-placeholder"></div>
             <h3>Welcome Back!</h3>
           </div>
           <form action="" className="form grid">

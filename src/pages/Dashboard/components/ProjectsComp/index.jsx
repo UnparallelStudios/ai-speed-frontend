@@ -1,8 +1,6 @@
 import "./index.scss";
 import { FaFolder, FaFolderOpen } from "react-icons/fa";
-import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Dashboard from "../..";
 
 function ProjectComp({ overviewHeight }) {
   const navigate = useNavigate();

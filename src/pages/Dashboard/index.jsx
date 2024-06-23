@@ -7,27 +7,33 @@ import ProfileTile from "./components/ProfileFeedComp/ProfileTile";
 import NavSelection from "./components/MainNavBarComp/NavSelection";
 import CenterComp from "./components/CenterComp";
 import LiveFeed from "./components/LivefeedComp";
-import Popup from "reactjs-popup";
+import Dropdown from "react-dropdown";
+import { IoSettings } from "react-icons/io5";
 
 function Dashboard(activeUrlIndex) {
   const [elementHeight, setElementHeight] = useState("");
-  const [popupState, setPopupState] = useState("");
   const heightRef = useRef();
   const { locationId } = useParams();
   const navigate = useNavigate();
+
+  const userName = localStorage.getItem("username");
 
   useEffect(() => {
     setElementHeight(heightRef.current.clientHeight);
   }, []);
 
-  const signoutReset = () => {
-    localStorage.removeItem("username");
-    navigate("/");
+  const signoutReset = (value) => {
+    if (value.label == "Sign Out?") {
+      localStorage.removeItem("username");
+      navigate("/");
+    }
   };
 
-  const closePopup = () => {
-    setPopupState(false);
-  };
+  const options = [{ value: "signout", label: "Sign Out?" }];
+
+  if (userName == null) {
+    navigate("/");
+  }
 
   return (
     <>
@@ -53,29 +59,14 @@ function Dashboard(activeUrlIndex) {
           <div className="profile-navbar" style={{ height: elementHeight }}>
             <div className="profile-nav-title">Profile</div>
             <div className="profile-nav-logout">
-              <Popup
-                trigger={<a className="logout-button">Sign out</a>}
-                position={"center"}
-                arrow={false}
-                open={popupState}
-                closeOnDocumentClick
-              >
-                <div className="profile-popup-container">
-                  <div className="popup-question">
-                    Are you sure you want to
-                    <br />
-                    Sign out?
-                  </div>
-                  <div className="popup-choice">
-                    <a className="choice-yes" onClick={signoutReset}>
-                      Yes
-                    </a>
-                    <a className="choice-no" onClick={closePopup}>
-                      No
-                    </a>
-                  </div>
-                </div>
-              </Popup>
+              <Dropdown
+                className="logout-dropdown"
+                menuClassName="logout-dropdown-menu"
+                placeholderClassName="logout-dropdown-placeholder"
+                placeholder={<IoSettings />}
+                onChange={signoutReset}
+                options={options}
+              />
             </div>
           </div>
           {/* profile tile with username */}
@@ -85,7 +76,7 @@ function Dashboard(activeUrlIndex) {
           </div>
           <div className="live-feed-container">
             <LiveFeed />
-            {/* <MLOutput /> */}
+            <MLOutput />
           </div>
         </div>
       </div>
