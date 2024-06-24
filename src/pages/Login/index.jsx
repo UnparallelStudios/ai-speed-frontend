@@ -24,7 +24,7 @@ const Login = () => {
     setLoginPassword(e.target.value);
   };
 
-  const urlLogin = "https://32c4-34-16-150-250.ngrok-free.app/login";
+  const urlLogin = "https://8671-34-125-164-104.ngrok-free.app/login";
 
   const validateLogin = () => {
     axios
@@ -48,6 +48,10 @@ const Login = () => {
       })
       .catch(function (error) {
         console.log(error);
+        setLoginStatus("Failed");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       });
 
     // if (loginUsername == "prathik" && loginPassword == "prejith") {

@@ -16,7 +16,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-  const urlRegister = "https://32c4-34-16-150-250.ngrok-free.app/signup";
+  const urlRegister = "https://8671-34-125-164-104.ngrok-free.app/signup";
 
   const validateRegister = () => {
     axios
@@ -41,6 +41,9 @@ const Register = () => {
       })
       .catch(function (error) {
         console.log(error);
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       });
   };
 
