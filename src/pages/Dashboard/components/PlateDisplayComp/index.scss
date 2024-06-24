@@ -1,7 +1,6 @@
 .platedisplay-main-container {
   height: 100%;
   width: 100%;
-  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,4 +18,13 @@
   height: 1px;
   width: 97%;
   background-color: grey;
+}
+
+.pd-display {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
 }

@@ -31,9 +31,9 @@ function Dashboard(activeUrlIndex) {
 
   const options = [{ value: "signout", label: "Sign Out?" }];
 
-  if (userName == null) {
-    navigate("/");
-  }
+  // if (userName == null) {
+  //   navigate("/");
+  // }
 
   return (
     <>

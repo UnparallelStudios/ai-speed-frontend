@@ -36,12 +36,12 @@ function NavSelection({ activeIndex }) {
       navigator: "/project",
       key: 1,
     },
-    // {
-    //   logo: <FaCar style={logoStyle} />,
-    //   title: "View Plates",
-    //   navigator: "/plates",
-    //   key: 2,
-    // },
+    {
+      logo: <FaCar style={logoStyle} />,
+      title: "View Plates",
+      navigator: "/plates",
+      key: 2,
+    },
     // { title: "Placeholder", key: 3 },
   ];
 
