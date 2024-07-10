@@ -1,0 +1,151 @@
+.project-comp-container {
+  height: 100%;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  // background-color: darkslateblue;
+}
+
+.projects-divider {
+  height: 1px;
+  width: 97%;
+  background-color: grey;
+}
+
+.project-comp-nav {
+  width: 100%;
+  display: flex;
+
+  .project-nav-container {
+    height: 100%;
+    width: 50%;
+    flex: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 25px;
+  }
+
+  .project-search-bar {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input {
+      height: 40%;
+      width: 50%;
+      border-radius: 6px;
+      background-color: #282837;
+      border: none;
+      color: white;
+      font-size: 15px;
+      padding-left: 10px;
+    }
+
+    input:hover {
+      background-color: rgba(255, 255, 255, 0.906);
+      color: black;
+    }
+
+    input:focus {
+      background-color: rgba(255, 255, 255, 0.906);
+      color: black;
+      outline: none;
+    }
+  }
+}
+
+.new-project-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  .new-project-title {
+    height: 56px;
+    width: 97%;
+    align-self: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 20px;
+    background-color: #282837;
+    display: flex;
+    align-items: center;
+  }
+
+  .grid-container--new-proj {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .grid-item--new-proj {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+    }
+  }
+}
+
+.current-project-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+
+  .curr-project-title {
+    height: 50px;
+    width: 97%;
+    align-self: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 20px;
+    background-color: #282837;
+    display: flex;
+    align-items: center;
+  }
+
+  .grid-container--currproj {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    .grid-item--currproj {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.folder-container {
+  height: auto;
+  width: auto;
+  position: relative;
+
+  .location-title {
+    height: auto;
+    width: auto;
+    position: absolute;
+    left: 10%;
+    top: 45px;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .location-title:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

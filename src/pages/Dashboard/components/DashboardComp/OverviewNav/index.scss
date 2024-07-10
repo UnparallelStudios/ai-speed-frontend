@@ -1,0 +1,88 @@
+.main-overview-container {
+  height: 18vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .overview-nav {
+    width: 100%;
+    display: flex;
+
+    .overview-title {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      font-size: 25px;
+      color: white;
+    }
+
+    .overview-search-bar {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      input {
+        height: 40%;
+        width: 50%;
+        border-radius: 6px;
+        background-color: #282837;
+        border: none;
+        color: white;
+        font-size: 15px;
+        padding-left: 10px;
+      }
+
+      input:hover {
+        background-color: rgba(255, 255, 255, 0.906);
+        color: black;
+      }
+
+      input:focus {
+        background-color: rgba(255, 255, 255, 0.906);
+        color: black;
+        outline: none;
+      }
+    }
+  }
+
+  .overview-performance {
+    height: 45px;
+    width: 97%;
+    align-self: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 20px;
+    background-color: #282837;
+    display: flex;
+    align-items: center;
+
+    .performance-title {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-size: 20px;
+      color: white;
+    }
+
+    .performance-period {
+      height: 100%;
+      width: 50%;
+      // background-color: darkcyan;
+    }
+  }
+}
+
+.overview-divider {
+  height: 1px;
+  width: 97%;
+  background-color: grey;
+}

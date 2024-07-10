@@ -1,0 +1,102 @@
+.navselection-container {
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: var(--fontFamily);
+
+  .nav-list {
+    height: auto;
+    width: 100%;
+    // background-color: darkorchid;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 10%;
+
+    a {
+      height: 50px;
+      width: 65%;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 7%;
+    }
+
+    a:hover {
+      background-color: rgba(255, 255, 255, 0.733);
+      color: black;
+      cursor: pointer;
+    }
+
+    .nav-item {
+      background-color: #282837;
+      color: rgba(255, 255, 255, 0.83);
+    }
+
+    .nav-item-active {
+      color: black;
+      background-color: rgba(255, 255, 255, 0.733);
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .navselection-container {
+    .nav-list {
+      a {
+        height: 50px;
+        width: 65%;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 7%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .navselection-container {
+    .nav-list {
+      a {
+        height: 50px;
+        width: 65%;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 7%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .navselection-container {
+    .nav-list {
+      a {
+        height: 50px;
+        width: 65%;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 7%;
+      }
+    }
+  }
+}

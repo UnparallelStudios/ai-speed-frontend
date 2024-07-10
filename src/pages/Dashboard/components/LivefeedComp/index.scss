@@ -1,0 +1,17 @@
+.live-feed {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    video {
+        flex: 1;
+    }
+}
+
+.expand {
+    position: relative;
+    top: 100px;
+    left: 100px;
+    width: 800px;
+    height: 500px;
+}
